@@ -23,6 +23,7 @@ _global_script_class_icons={
 config/name="Chow's Tuning Tool"
 config/description="GUI for tuning.xml and cars.xml editing and automatic conditionals code generation."
 run/main_scene="res://MainWindow.tscn"
+run/low_processor_mode=true
 config/icon="res://icon.png"
 config/windows_native_icon="res://icon.ico"
 
