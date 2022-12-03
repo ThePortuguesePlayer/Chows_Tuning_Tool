@@ -1,0 +1,1029 @@
+[gd_scene load_steps=2 format=2]
+
+[ext_resource path="res://scripts/main.gd" type="Script" id=1]
+
+[node name="Control" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+script = ExtResource( 1 )
+
+[node name="MenuButton" type="MenuButton" parent="."]
+visible = false
+margin_top = 2.0
+margin_right = 35.0
+margin_bottom = 22.0
+text = "File"
+flat = false
+align = 0
+items = [ "Locate XML Files", null, 0, false, false, 0, 0, null, "", false, "Item 1", null, 0, false, false, 1, 0, null, "", true, "Exit", null, 0, false, false, 2, 0, null, "", false ]
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+
+[node name="TabContainer" type="TabContainer" parent="VBoxContainer"]
+margin_right = 1024.0
+margin_bottom = 600.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+tab_align = 2
+
+[node name="Import" type="HBoxContainer" parent="VBoxContainer/TabContainer"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 4.0
+margin_top = 32.0
+margin_right = -4.0
+margin_bottom = -4.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="VSplitContainer" type="VSplitContainer" parent="VBoxContainer/TabContainer/Import"]
+margin_right = 1016.0
+margin_bottom = 564.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="VBoxContainer_XMLPath" type="VBoxContainer" parent="VBoxContainer/TabContainer/Import/VSplitContainer"]
+margin_right = 1016.0
+margin_bottom = 38.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+alignment = 1
+
+[node name="Label_XMLPath" type="Label" parent="VBoxContainer/TabContainer/Import/VSplitContainer/VBoxContainer_XMLPath"]
+margin_right = 1016.0
+margin_bottom = 14.0
+text = "Path to tuning.xml:"
+
+[node name="HBoxContainer" type="HBoxContainer" parent="VBoxContainer/TabContainer/Import/VSplitContainer/VBoxContainer_XMLPath"]
+margin_top = 18.0
+margin_right = 1016.0
+margin_bottom = 38.0
+size_flags_horizontal = 3
+custom_constants/separation = 0
+
+[node name="TextEdit_XMLPath" type="TextEdit" parent="VBoxContainer/TabContainer/Import/VSplitContainer/VBoxContainer_XMLPath/HBoxContainer"]
+margin_right = 974.0
+margin_bottom = 20.0
+size_flags_horizontal = 3
+text = "C:\\Program Files (x86)\\MTA San Andreas 1.5\\server\\mods\\deathmatch\\resources\\[nfssa]\\ngui\\files\\tuning.xml"
+
+[node name="Button_Load" type="Button" parent="VBoxContainer/TabContainer/Import/VSplitContainer/VBoxContainer_XMLPath/HBoxContainer"]
+margin_left = 974.0
+margin_right = 1016.0
+margin_bottom = 20.0
+text = "Load"
+
+[node name="VBoxContainer_Import" type="VBoxContainer" parent="VBoxContainer/TabContainer/Import/VSplitContainer"]
+margin_top = 50.0
+margin_right = 1016.0
+margin_bottom = 564.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+size_flags_stretch_ratio = 12.0
+
+[node name="ItemList_Import" type="ItemList" parent="VBoxContainer/TabContainer/Import/VSplitContainer/VBoxContainer_Import"]
+margin_right = 1016.0
+margin_bottom = 490.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+size_flags_stretch_ratio = 10.0
+select_mode = 1
+max_columns = 6
+same_column_width = true
+
+[node name="Button_Import" type="Button" parent="VBoxContainer/TabContainer/Import/VSplitContainer/VBoxContainer_Import"]
+margin_top = 494.0
+margin_right = 1016.0
+margin_bottom = 514.0
+size_flags_horizontal = 3
+text = "Import Selected"
+
+[node name="Tuning" type="VBoxContainer" parent="VBoxContainer/TabContainer"]
+visible = false
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 4.0
+margin_top = 32.0
+margin_right = -4.0
+margin_bottom = -4.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+custom_constants/separation = 6
+
+[node name="HBoxContainer_Group" type="HBoxContainer" parent="VBoxContainer/TabContainer/Tuning"]
+margin_right = 1016.0
+margin_bottom = 20.0
+size_flags_horizontal = 3
+
+[node name="Label_Group" type="Label" parent="VBoxContainer/TabContainer/Tuning/HBoxContainer_Group"]
+margin_top = 3.0
+margin_right = 55.0
+margin_bottom = 17.0
+text = "Group:   "
+
+[node name="OptionButton_Group" type="OptionButton" parent="VBoxContainer/TabContainer/Tuning/HBoxContainer_Group"]
+margin_left = 59.0
+margin_right = 932.0
+margin_bottom = 20.0
+size_flags_horizontal = 3
+
+[node name="Button_New" type="Button" parent="VBoxContainer/TabContainer/Tuning/HBoxContainer_Group"]
+margin_left = 936.0
+margin_right = 976.0
+margin_bottom = 20.0
+text = "New"
+
+[node name="Button_Edit" type="Button" parent="VBoxContainer/TabContainer/Tuning/HBoxContainer_Group"]
+margin_left = 980.0
+margin_right = 1016.0
+margin_bottom = 20.0
+text = "Edit"
+
+[node name="HBoxContainer_GroupNamer" type="HBoxContainer" parent="VBoxContainer/TabContainer/Tuning"]
+margin_top = 26.0
+margin_right = 1016.0
+margin_bottom = 46.0
+size_flags_horizontal = 3
+
+[node name="Label_GroupNamer" type="Label" parent="VBoxContainer/TabContainer/Tuning/HBoxContainer_GroupNamer"]
+margin_top = 3.0
+margin_right = 55.0
+margin_bottom = 17.0
+text = "Group:   "
+
+[node name="TextEdit_GroupNamer" type="TextEdit" parent="VBoxContainer/TabContainer/Tuning/HBoxContainer_GroupNamer"]
+margin_left = 59.0
+margin_right = 931.0
+margin_bottom = 20.0
+size_flags_horizontal = 3
+
+[node name="Button_Save" type="Button" parent="VBoxContainer/TabContainer/Tuning/HBoxContainer_GroupNamer"]
+margin_left = 935.0
+margin_right = 1016.0
+margin_bottom = 20.0
+text = "     Save     "
+
+[node name="HBoxContainer_GroupEditor" type="HBoxContainer" parent="VBoxContainer/TabContainer/Tuning"]
+margin_top = 52.0
+margin_right = 1016.0
+margin_bottom = 72.0
+size_flags_horizontal = 3
+
+[node name="Label_GroupEditor" type="Label" parent="VBoxContainer/TabContainer/Tuning/HBoxContainer_GroupEditor"]
+margin_top = 3.0
+margin_right = 55.0
+margin_bottom = 17.0
+text = "Group:   "
+
+[node name="TextEdit_GroupEditor" type="TextEdit" parent="VBoxContainer/TabContainer/Tuning/HBoxContainer_GroupEditor"]
+margin_left = 59.0
+margin_right = 931.0
+margin_bottom = 20.0
+size_flags_horizontal = 3
+
+[node name="Button_Save" type="Button" parent="VBoxContainer/TabContainer/Tuning/HBoxContainer_GroupEditor"]
+margin_left = 935.0
+margin_right = 984.0
+margin_bottom = 20.0
+text = " Save "
+
+[node name="Button_Delete" type="Button" parent="VBoxContainer/TabContainer/Tuning/HBoxContainer_GroupEditor"]
+margin_left = 988.0
+margin_right = 1016.0
+margin_bottom = 20.0
+text = " X "
+
+[node name="HSeparator" type="HSeparator" parent="VBoxContainer/TabContainer/Tuning"]
+margin_top = 78.0
+margin_right = 1016.0
+margin_bottom = 82.0
+
+[node name="HBoxContainer_Part" type="HBoxContainer" parent="VBoxContainer/TabContainer/Tuning"]
+margin_top = 88.0
+margin_right = 1016.0
+margin_bottom = 108.0
+
+[node name="Button_Revert" type="Button" parent="VBoxContainer/TabContainer/Tuning/HBoxContainer_Part"]
+margin_right = 53.0
+margin_bottom = 20.0
+disabled = true
+text = "Revert"
+
+[node name="OptionButton_Part" type="OptionButton" parent="VBoxContainer/TabContainer/Tuning/HBoxContainer_Part"]
+margin_left = 57.0
+margin_right = 931.0
+margin_bottom = 20.0
+size_flags_horizontal = 3
+
+[node name="Button_Save" type="Button" parent="VBoxContainer/TabContainer/Tuning/HBoxContainer_Part"]
+margin_left = 935.0
+margin_right = 984.0
+margin_bottom = 20.0
+disabled = true
+text = " Save "
+
+[node name="Button_Clear" type="Button" parent="VBoxContainer/TabContainer/Tuning/HBoxContainer_Part"]
+margin_left = 988.0
+margin_right = 1016.0
+margin_bottom = 20.0
+disabled = true
+text = " X "
+
+[node name="HBoxContainer_Type" type="HBoxContainer" parent="VBoxContainer/TabContainer/Tuning"]
+margin_top = 114.0
+margin_right = 1016.0
+margin_bottom = 134.0
+
+[node name="Label_Type" type="Label" parent="VBoxContainer/TabContainer/Tuning/HBoxContainer_Type"]
+margin_top = 3.0
+margin_right = 54.0
+margin_bottom = 17.0
+text = "Type:     "
+
+[node name="OptionButton_Type" type="OptionButton" parent="VBoxContainer/TabContainer/Tuning/HBoxContainer_Type"]
+margin_left = 58.0
+margin_right = 1016.0
+margin_bottom = 20.0
+size_flags_horizontal = 3
+
+[node name="HBoxContainer_ID" type="HBoxContainer" parent="VBoxContainer/TabContainer/Tuning"]
+margin_top = 140.0
+margin_right = 1016.0
+margin_bottom = 204.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+custom_constants/separation = 39
+
+[node name="Label_ID" type="Label" parent="VBoxContainer/TabContainer/Tuning/HBoxContainer_ID"]
+margin_top = 25.0
+margin_right = 19.0
+margin_bottom = 39.0
+text = "ID:"
+
+[node name="TextEdit_ID" type="TextEdit" parent="VBoxContainer/TabContainer/Tuning/HBoxContainer_ID"]
+margin_left = 58.0
+margin_right = 1016.0
+margin_bottom = 64.0
+size_flags_horizontal = 3
+
+[node name="HBoxContainer_Name" type="HBoxContainer" parent="VBoxContainer/TabContainer/Tuning"]
+margin_top = 210.0
+margin_right = 1016.0
+margin_bottom = 275.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+custom_constants/separation = 16
+
+[node name="Label_Name" type="Label" parent="VBoxContainer/TabContainer/Tuning/HBoxContainer_Name"]
+margin_top = 25.0
+margin_right = 42.0
+margin_bottom = 39.0
+text = "Name:"
+
+[node name="TextEdit_Name" type="TextEdit" parent="VBoxContainer/TabContainer/Tuning/HBoxContainer_Name"]
+margin_left = 58.0
+margin_right = 1016.0
+margin_bottom = 65.0
+size_flags_horizontal = 3
+
+[node name="HBoxContainer_Objects" type="HBoxContainer" parent="VBoxContainer/TabContainer/Tuning"]
+margin_top = 281.0
+margin_right = 1016.0
+margin_bottom = 346.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="Label_Objects" type="Label" parent="VBoxContainer/TabContainer/Tuning/HBoxContainer_Objects"]
+margin_top = 25.0
+margin_right = 54.0
+margin_bottom = 39.0
+text = "Objects:"
+
+[node name="TextEdit_Objects" type="TextEdit" parent="VBoxContainer/TabContainer/Tuning/HBoxContainer_Objects"]
+margin_left = 58.0
+margin_right = 1016.0
+margin_bottom = 65.0
+size_flags_horizontal = 3
+wrap_enabled = true
+
+[node name="HBoxContainer_Offsets" type="HBoxContainer" parent="VBoxContainer/TabContainer/Tuning"]
+margin_top = 352.0
+margin_right = 1016.0
+margin_bottom = 376.0
+size_flags_horizontal = 3
+custom_constants/separation = 3
+
+[node name="Label_Offset" type="Label" parent="VBoxContainer/TabContainer/Tuning/HBoxContainer_Offsets"]
+margin_top = 5.0
+margin_right = 55.0
+margin_bottom = 19.0
+text = "X Offset:"
+
+[node name="SpinBox_Offset_X" type="SpinBox" parent="VBoxContainer/TabContainer/Tuning/HBoxContainer_Offsets"]
+margin_left = 58.0
+margin_right = 279.0
+margin_bottom = 24.0
+size_flags_horizontal = 3
+min_value = -1.0
+max_value = 10.0
+step = 0.001
+allow_greater = true
+allow_lesser = true
+align = 2
+prefix = "Front"
+
+[node name="SpinBox_Offset_Y" type="SpinBox" parent="VBoxContainer/TabContainer/Tuning/HBoxContainer_Offsets"]
+margin_left = 282.0
+margin_right = 503.0
+margin_bottom = 24.0
+size_flags_horizontal = 3
+min_value = -1.0
+max_value = 10.0
+step = 0.001
+allow_greater = true
+allow_lesser = true
+align = 2
+prefix = "Rear"
+
+[node name="VSeparator" type="VSeparator" parent="VBoxContainer/TabContainer/Tuning/HBoxContainer_Offsets"]
+margin_left = 506.0
+margin_right = 510.0
+margin_bottom = 24.0
+
+[node name="Label_OffsetF" type="Label" parent="VBoxContainer/TabContainer/Tuning/HBoxContainer_Offsets"]
+margin_left = 513.0
+margin_top = 5.0
+margin_right = 567.0
+margin_bottom = 19.0
+text = "Y Offset:"
+
+[node name="SpinBox_OffsetF" type="SpinBox" parent="VBoxContainer/TabContainer/Tuning/HBoxContainer_Offsets"]
+margin_left = 570.0
+margin_right = 791.0
+margin_bottom = 24.0
+size_flags_horizontal = 3
+max_value = 10.0
+step = 0.001
+allow_greater = true
+allow_lesser = true
+align = 2
+prefix = "Front"
+
+[node name="SpinBox_OffsetR" type="SpinBox" parent="VBoxContainer/TabContainer/Tuning/HBoxContainer_Offsets"]
+margin_left = 794.0
+margin_right = 1016.0
+margin_bottom = 24.0
+size_flags_horizontal = 3
+max_value = 10.0
+step = 0.001
+allow_greater = true
+allow_lesser = true
+align = 2
+prefix = "Rear"
+
+[node name="HBoxContainer_Price" type="HBoxContainer" parent="VBoxContainer/TabContainer/Tuning"]
+margin_top = 382.0
+margin_right = 1016.0
+margin_bottom = 447.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+custom_constants/separation = 2
+
+[node name="Label_Price" type="Label" parent="VBoxContainer/TabContainer/Tuning/HBoxContainer_Price"]
+margin_top = 25.0
+margin_right = 56.0
+margin_bottom = 39.0
+text = "Price:     "
+
+[node name="HBoxContainer" type="HBoxContainer" parent="VBoxContainer/TabContainer/Tuning/HBoxContainer_Price"]
+margin_left = 58.0
+margin_right = 1016.0
+margin_bottom = 65.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+custom_constants/separation = 0
+
+[node name="TextEdit_Price" type="TextEdit" parent="VBoxContainer/TabContainer/Tuning/HBoxContainer_Price/HBoxContainer"]
+margin_right = 920.0
+margin_bottom = 65.0
+size_flags_horizontal = 3
+
+[node name="Button_GetLast" type="Button" parent="VBoxContainer/TabContainer/Tuning/HBoxContainer_Price/HBoxContainer"]
+margin_left = 920.0
+margin_right = 958.0
+margin_bottom = 65.0
+hint_tooltip = "Get last price value used for this part type."
+custom_constants/hseparation = -2
+text = "Last"
+
+[node name="HBoxContainer_Rate" type="HBoxContainer" parent="VBoxContainer/TabContainer/Tuning"]
+margin_top = 453.0
+margin_right = 1016.0
+margin_bottom = 518.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+custom_constants/separation = 3
+
+[node name="Label_Rate" type="Label" parent="VBoxContainer/TabContainer/Tuning/HBoxContainer_Rate"]
+margin_top = 25.0
+margin_right = 55.0
+margin_bottom = 39.0
+text = "Rating:   "
+
+[node name="HBoxContainer" type="HBoxContainer" parent="VBoxContainer/TabContainer/Tuning/HBoxContainer_Rate"]
+margin_left = 58.0
+margin_right = 1016.0
+margin_bottom = 65.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+custom_constants/separation = 0
+
+[node name="TextEdit_Rate" type="TextEdit" parent="VBoxContainer/TabContainer/Tuning/HBoxContainer_Rate/HBoxContainer"]
+margin_right = 920.0
+margin_bottom = 65.0
+size_flags_horizontal = 3
+
+[node name="Button_GetLast" type="Button" parent="VBoxContainer/TabContainer/Tuning/HBoxContainer_Rate/HBoxContainer"]
+margin_left = 920.0
+margin_right = 958.0
+margin_bottom = 65.0
+hint_tooltip = "Get last rating value used for this part type."
+text = "Last"
+
+[node name="HBoxContainer_Lock" type="HBoxContainer" parent="VBoxContainer/TabContainer/Tuning"]
+margin_top = 524.0
+margin_right = 1016.0
+margin_bottom = 564.0
+
+[node name="CheckButton" type="CheckButton" parent="VBoxContainer/TabContainer/Tuning/HBoxContainer_Lock"]
+margin_right = 187.0
+margin_bottom = 40.0
+custom_constants/check_vadjust = 0
+custom_constants/hseparation = 0
+text = "Make unlockable;"
+
+[node name="Conditionals" type="VBoxContainer" parent="VBoxContainer/TabContainer"]
+visible = false
+margin_left = 4.0
+margin_top = 32.0
+margin_right = 1020.0
+margin_bottom = 596.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="HBoxContainer_Group" type="HBoxContainer" parent="VBoxContainer/TabContainer/Conditionals"]
+margin_right = 1016.0
+margin_bottom = 20.0
+size_flags_horizontal = 3
+
+[node name="Label_Group" type="Label" parent="VBoxContainer/TabContainer/Conditionals/HBoxContainer_Group"]
+margin_top = 3.0
+margin_right = 43.0
+margin_bottom = 17.0
+text = "Group:"
+
+[node name="OptionButton_Group" type="OptionButton" parent="VBoxContainer/TabContainer/Conditionals/HBoxContainer_Group"]
+margin_left = 47.0
+margin_right = 932.0
+margin_bottom = 20.0
+size_flags_horizontal = 3
+
+[node name="Button_New" type="Button" parent="VBoxContainer/TabContainer/Conditionals/HBoxContainer_Group"]
+margin_left = 936.0
+margin_right = 976.0
+margin_bottom = 20.0
+text = "New"
+
+[node name="Button_Edit" type="Button" parent="VBoxContainer/TabContainer/Conditionals/HBoxContainer_Group"]
+margin_left = 980.0
+margin_right = 1016.0
+margin_bottom = 20.0
+text = "Edit"
+
+[node name="HBoxContainer_GroupNamer" type="HBoxContainer" parent="VBoxContainer/TabContainer/Conditionals"]
+margin_top = 24.0
+margin_right = 1016.0
+margin_bottom = 44.0
+size_flags_horizontal = 3
+
+[node name="Label_GroupNamer" type="Label" parent="VBoxContainer/TabContainer/Conditionals/HBoxContainer_GroupNamer"]
+margin_top = 3.0
+margin_right = 43.0
+margin_bottom = 17.0
+text = "Group:"
+
+[node name="TextEdit_GroupNamer" type="TextEdit" parent="VBoxContainer/TabContainer/Conditionals/HBoxContainer_GroupNamer"]
+margin_left = 47.0
+margin_right = 931.0
+margin_bottom = 20.0
+size_flags_horizontal = 3
+
+[node name="Button_Save" type="Button" parent="VBoxContainer/TabContainer/Conditionals/HBoxContainer_GroupNamer"]
+margin_left = 935.0
+margin_right = 1016.0
+margin_bottom = 20.0
+text = "     Save     "
+
+[node name="Button_Delete" type="Button" parent="VBoxContainer/TabContainer/Conditionals/HBoxContainer_GroupNamer"]
+visible = false
+margin_left = 988.0
+margin_right = 1016.0
+margin_bottom = 20.0
+text = " X "
+
+[node name="HSeparator2" type="HSeparator" parent="VBoxContainer/TabContainer/Conditionals"]
+margin_top = 48.0
+margin_right = 1016.0
+margin_bottom = 52.0
+
+[node name="HBoxContainer_Set" type="HBoxContainer" parent="VBoxContainer/TabContainer/Conditionals"]
+margin_top = 56.0
+margin_right = 1016.0
+margin_bottom = 76.0
+size_flags_horizontal = 3
+
+[node name="Label_Set" type="Label" parent="VBoxContainer/TabContainer/Conditionals/HBoxContainer_Set"]
+margin_top = 3.0
+margin_right = 44.0
+margin_bottom = 17.0
+text = "Set:     "
+
+[node name="OptionButton_Set" type="OptionButton" parent="VBoxContainer/TabContainer/Conditionals/HBoxContainer_Set"]
+margin_left = 48.0
+margin_right = 931.0
+margin_bottom = 20.0
+size_flags_horizontal = 3
+
+[node name="Button_Save" type="Button" parent="VBoxContainer/TabContainer/Conditionals/HBoxContainer_Set"]
+margin_left = 935.0
+margin_right = 984.0
+margin_bottom = 20.0
+disabled = true
+text = " Save "
+
+[node name="Button_Clear" type="Button" parent="VBoxContainer/TabContainer/Conditionals/HBoxContainer_Set"]
+margin_left = 988.0
+margin_right = 1016.0
+margin_bottom = 20.0
+disabled = true
+text = " X "
+
+[node name="HSeparator3" type="HSeparator" parent="VBoxContainer/TabContainer/Conditionals"]
+margin_top = 80.0
+margin_right = 1016.0
+margin_bottom = 84.0
+
+[node name="GridContainer_GroupsOfIDs" type="GridContainer" parent="VBoxContainer/TabContainer/Conditionals"]
+margin_top = 88.0
+margin_right = 1016.0
+margin_bottom = 394.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+size_flags_stretch_ratio = 2.0
+columns = 2
+
+[node name="VBoxContainer_Group1" type="VBoxContainer" parent="VBoxContainer/TabContainer/Conditionals/GridContainer_GroupsOfIDs"]
+margin_right = 506.0
+margin_bottom = 151.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="CheckBox_Group1" type="CheckBox" parent="VBoxContainer/TabContainer/Conditionals/GridContainer_GroupsOfIDs/VBoxContainer_Group1"]
+margin_right = 506.0
+margin_bottom = 24.0
+pressed = true
+text = "ID Group #1"
+
+[node name="VSplitContainer_Group1" type="VSplitContainer" parent="VBoxContainer/TabContainer/Conditionals/GridContainer_GroupsOfIDs/VBoxContainer_Group1"]
+margin_top = 28.0
+margin_right = 506.0
+margin_bottom = 151.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="ItemList_Group1" type="ItemList" parent="VBoxContainer/TabContainer/Conditionals/GridContainer_GroupsOfIDs/VBoxContainer_Group1/VSplitContainer_Group1"]
+margin_right = 506.0
+margin_bottom = 76.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+size_flags_stretch_ratio = 2.0
+allow_reselect = true
+
+[node name="TextEdit_Group1" type="TextEdit" parent="VBoxContainer/TabContainer/Conditionals/GridContainer_GroupsOfIDs/VBoxContainer_Group1/VSplitContainer_Group1"]
+margin_top = 88.0
+margin_right = 506.0
+margin_bottom = 123.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="VBoxContainer_Group2" type="VBoxContainer" parent="VBoxContainer/TabContainer/Conditionals/GridContainer_GroupsOfIDs"]
+margin_left = 510.0
+margin_right = 1016.0
+margin_bottom = 151.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="CheckBox_Group2" type="CheckBox" parent="VBoxContainer/TabContainer/Conditionals/GridContainer_GroupsOfIDs/VBoxContainer_Group2"]
+margin_right = 506.0
+margin_bottom = 24.0
+pressed = true
+text = "ID Group #2"
+
+[node name="VSplitContainer_Group2" type="VSplitContainer" parent="VBoxContainer/TabContainer/Conditionals/GridContainer_GroupsOfIDs/VBoxContainer_Group2"]
+margin_top = 28.0
+margin_right = 506.0
+margin_bottom = 151.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="ItemList_Group2" type="ItemList" parent="VBoxContainer/TabContainer/Conditionals/GridContainer_GroupsOfIDs/VBoxContainer_Group2/VSplitContainer_Group2"]
+margin_right = 506.0
+margin_bottom = 76.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+size_flags_stretch_ratio = 2.0
+allow_reselect = true
+
+[node name="TextEdit_Group2" type="TextEdit" parent="VBoxContainer/TabContainer/Conditionals/GridContainer_GroupsOfIDs/VBoxContainer_Group2/VSplitContainer_Group2"]
+margin_top = 88.0
+margin_right = 506.0
+margin_bottom = 123.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="VBoxContainer_Group3" type="VBoxContainer" parent="VBoxContainer/TabContainer/Conditionals/GridContainer_GroupsOfIDs"]
+margin_top = 155.0
+margin_right = 506.0
+margin_bottom = 306.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="CheckBox_Group3" type="CheckBox" parent="VBoxContainer/TabContainer/Conditionals/GridContainer_GroupsOfIDs/VBoxContainer_Group3"]
+margin_right = 506.0
+margin_bottom = 24.0
+text = "ID Group #3"
+
+[node name="VSplitContainer_Group3" type="VSplitContainer" parent="VBoxContainer/TabContainer/Conditionals/GridContainer_GroupsOfIDs/VBoxContainer_Group3"]
+margin_top = 28.0
+margin_right = 506.0
+margin_bottom = 151.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="ItemList_Group3" type="ItemList" parent="VBoxContainer/TabContainer/Conditionals/GridContainer_GroupsOfIDs/VBoxContainer_Group3/VSplitContainer_Group3"]
+margin_right = 506.0
+margin_bottom = 76.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+size_flags_stretch_ratio = 2.0
+allow_reselect = true
+
+[node name="TextEdit_Group3" type="TextEdit" parent="VBoxContainer/TabContainer/Conditionals/GridContainer_GroupsOfIDs/VBoxContainer_Group3/VSplitContainer_Group3"]
+margin_top = 88.0
+margin_right = 506.0
+margin_bottom = 123.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="VBoxContainer_Group4" type="VBoxContainer" parent="VBoxContainer/TabContainer/Conditionals/GridContainer_GroupsOfIDs"]
+margin_left = 510.0
+margin_top = 155.0
+margin_right = 1016.0
+margin_bottom = 306.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="CheckBox_Group4" type="CheckBox" parent="VBoxContainer/TabContainer/Conditionals/GridContainer_GroupsOfIDs/VBoxContainer_Group4"]
+margin_right = 506.0
+margin_bottom = 24.0
+text = "ID Group #4"
+
+[node name="VSplitContainer_Group4" type="VSplitContainer" parent="VBoxContainer/TabContainer/Conditionals/GridContainer_GroupsOfIDs/VBoxContainer_Group4"]
+margin_top = 28.0
+margin_right = 506.0
+margin_bottom = 151.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="ItemList_Group4" type="ItemList" parent="VBoxContainer/TabContainer/Conditionals/GridContainer_GroupsOfIDs/VBoxContainer_Group4/VSplitContainer_Group4"]
+margin_right = 506.0
+margin_bottom = 76.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+size_flags_stretch_ratio = 2.0
+allow_reselect = true
+
+[node name="TextEdit_Group4" type="TextEdit" parent="VBoxContainer/TabContainer/Conditionals/GridContainer_GroupsOfIDs/VBoxContainer_Group4/VSplitContainer_Group4"]
+margin_top = 88.0
+margin_right = 506.0
+margin_bottom = 123.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="VBoxContainer_StandardSet" type="VBoxContainer" parent="VBoxContainer/TabContainer/Conditionals"]
+visible = false
+margin_top = 88.0
+margin_right = 1016.0
+margin_bottom = 320.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="Label_Set" type="Label" parent="VBoxContainer/TabContainer/Conditionals/VBoxContainer_StandardSet"]
+margin_right = 1016.0
+margin_bottom = 14.0
+text = "Set:"
+
+[node name="TextEdit_Set" type="TextEdit" parent="VBoxContainer/TabContainer/Conditionals/VBoxContainer_StandardSet"]
+margin_top = 18.0
+margin_right = 1016.0
+margin_bottom = 232.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="HSeparator" type="HSeparator" parent="VBoxContainer/TabContainer/Conditionals"]
+margin_top = 324.0
+margin_right = 1016.0
+margin_bottom = 328.0
+
+[node name="HBoxContainer_Objects" type="HBoxContainer" parent="VBoxContainer/TabContainer/Conditionals"]
+margin_top = 332.0
+margin_right = 1016.0
+margin_bottom = 564.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="VBoxContainer_ToEnable" type="VBoxContainer" parent="VBoxContainer/TabContainer/Conditionals/HBoxContainer_Objects"]
+margin_right = 482.0
+margin_bottom = 232.0
+size_flags_horizontal = 3
+
+[node name="VBoxContainer_EnablePrefix" type="VBoxContainer" parent="VBoxContainer/TabContainer/Conditionals/HBoxContainer_Objects/VBoxContainer_ToEnable"]
+margin_right = 482.0
+margin_bottom = 74.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="Label_EnablePrefix" type="Label" parent="VBoxContainer/TabContainer/Conditionals/HBoxContainer_Objects/VBoxContainer_ToEnable/VBoxContainer_EnablePrefix"]
+margin_right = 482.0
+margin_bottom = 14.0
+text = "Prefix to enable:"
+
+[node name="TextEdit_EnablePrefix" type="TextEdit" parent="VBoxContainer/TabContainer/Conditionals/HBoxContainer_Objects/VBoxContainer_ToEnable/VBoxContainer_EnablePrefix"]
+margin_top = 18.0
+margin_right = 482.0
+margin_bottom = 74.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="VBoxContainer_EnableSuffix" type="VBoxContainer" parent="VBoxContainer/TabContainer/Conditionals/HBoxContainer_Objects/VBoxContainer_ToEnable"]
+margin_top = 78.0
+margin_right = 482.0
+margin_bottom = 153.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="Label_EnableSuffix" type="Label" parent="VBoxContainer/TabContainer/Conditionals/HBoxContainer_Objects/VBoxContainer_ToEnable/VBoxContainer_EnableSuffix"]
+margin_right = 482.0
+margin_bottom = 14.0
+text = "Suffix to enable:"
+
+[node name="TextEdit_EnableSuffix" type="TextEdit" parent="VBoxContainer/TabContainer/Conditionals/HBoxContainer_Objects/VBoxContainer_ToEnable/VBoxContainer_EnableSuffix"]
+margin_top = 18.0
+margin_right = 482.0
+margin_bottom = 75.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="VBoxContainer_Enable" type="VBoxContainer" parent="VBoxContainer/TabContainer/Conditionals/HBoxContainer_Objects/VBoxContainer_ToEnable"]
+margin_top = 157.0
+margin_right = 482.0
+margin_bottom = 232.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="Label_Enable" type="Label" parent="VBoxContainer/TabContainer/Conditionals/HBoxContainer_Objects/VBoxContainer_ToEnable/VBoxContainer_Enable"]
+margin_right = 482.0
+margin_bottom = 14.0
+text = "Enable:"
+
+[node name="TextEdit_Enable" type="TextEdit" parent="VBoxContainer/TabContainer/Conditionals/HBoxContainer_Objects/VBoxContainer_ToEnable/VBoxContainer_Enable"]
+margin_top = 18.0
+margin_right = 482.0
+margin_bottom = 75.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="Button_Switch" type="Button" parent="VBoxContainer/TabContainer/Conditionals/HBoxContainer_Objects"]
+margin_left = 486.0
+margin_right = 530.0
+margin_bottom = 232.0
+hint_tooltip = "Just click it and see, asshole. With shit written in the boxes, preferably..."
+text = "Swap"
+
+[node name="VBoxContainer_ToDisable" type="VBoxContainer" parent="VBoxContainer/TabContainer/Conditionals/HBoxContainer_Objects"]
+margin_left = 534.0
+margin_right = 1016.0
+margin_bottom = 232.0
+size_flags_horizontal = 3
+
+[node name="VBoxContainer_DisablePrefix" type="VBoxContainer" parent="VBoxContainer/TabContainer/Conditionals/HBoxContainer_Objects/VBoxContainer_ToDisable"]
+margin_right = 482.0
+margin_bottom = 74.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="Label_DisablePrefix" type="Label" parent="VBoxContainer/TabContainer/Conditionals/HBoxContainer_Objects/VBoxContainer_ToDisable/VBoxContainer_DisablePrefix"]
+margin_right = 482.0
+margin_bottom = 14.0
+text = "Prefix to disable:"
+
+[node name="TextEdit_DisablePrefix" type="TextEdit" parent="VBoxContainer/TabContainer/Conditionals/HBoxContainer_Objects/VBoxContainer_ToDisable/VBoxContainer_DisablePrefix"]
+margin_top = 18.0
+margin_right = 482.0
+margin_bottom = 74.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="VBoxContainer_DisableSuffix" type="VBoxContainer" parent="VBoxContainer/TabContainer/Conditionals/HBoxContainer_Objects/VBoxContainer_ToDisable"]
+margin_top = 78.0
+margin_right = 482.0
+margin_bottom = 153.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="Label_DisableSuffix" type="Label" parent="VBoxContainer/TabContainer/Conditionals/HBoxContainer_Objects/VBoxContainer_ToDisable/VBoxContainer_DisableSuffix"]
+margin_right = 482.0
+margin_bottom = 14.0
+text = "Suffix to disable:"
+
+[node name="TextEdit_DisableSuffix" type="TextEdit" parent="VBoxContainer/TabContainer/Conditionals/HBoxContainer_Objects/VBoxContainer_ToDisable/VBoxContainer_DisableSuffix"]
+margin_top = 18.0
+margin_right = 482.0
+margin_bottom = 75.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="VBoxContainer_Disable" type="VBoxContainer" parent="VBoxContainer/TabContainer/Conditionals/HBoxContainer_Objects/VBoxContainer_ToDisable"]
+margin_top = 157.0
+margin_right = 482.0
+margin_bottom = 232.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="Label_Disable" type="Label" parent="VBoxContainer/TabContainer/Conditionals/HBoxContainer_Objects/VBoxContainer_ToDisable/VBoxContainer_Disable"]
+margin_right = 482.0
+margin_bottom = 14.0
+text = "Disable:"
+
+[node name="TextEdit_Disable" type="TextEdit" parent="VBoxContainer/TabContainer/Conditionals/HBoxContainer_Objects/VBoxContainer_ToDisable/VBoxContainer_Disable"]
+margin_top = 18.0
+margin_right = 482.0
+margin_bottom = 75.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="Export" type="VSplitContainer" parent="VBoxContainer/TabContainer"]
+visible = false
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 4.0
+margin_top = 32.0
+margin_right = -4.0
+margin_bottom = -4.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="HBoxContainer_Cars" type="HBoxContainer" parent="VBoxContainer/TabContainer/Export"]
+margin_right = 1016.0
+margin_bottom = 88.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+custom_constants/separation = 6
+
+[node name="Label_Cars" type="Label" parent="VBoxContainer/TabContainer/Export/HBoxContainer_Cars"]
+margin_top = 37.0
+margin_right = 70.0
+margin_bottom = 51.0
+text = "cars.xml:   "
+
+[node name="Export_Cars" type="TextEdit" parent="VBoxContainer/TabContainer/Export/HBoxContainer_Cars"]
+margin_left = 76.0
+margin_right = 1016.0
+margin_bottom = 88.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+show_line_numbers = true
+highlight_all_occurrences = true
+
+[node name="HBoxContainer_Tuning" type="HBoxContainer" parent="VBoxContainer/TabContainer/Export"]
+margin_top = 100.0
+margin_right = 1016.0
+margin_bottom = 564.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+size_flags_stretch_ratio = 5.0
+
+[node name="Label_Tuning" type="Label" parent="VBoxContainer/TabContainer/Export/HBoxContainer_Tuning"]
+margin_top = 225.0
+margin_right = 72.0
+margin_bottom = 239.0
+text = "tuning.xml:"
+
+[node name="Export_Tuning" type="TextEdit" parent="VBoxContainer/TabContainer/Export/HBoxContainer_Tuning"]
+margin_left = 76.0
+margin_right = 1016.0
+margin_bottom = 464.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+show_line_numbers = true
+highlight_all_occurrences = true
+
+[node name="PopupPanel_IDinUse" type="PopupPanel" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 383.0
+margin_top = 211.0
+margin_right = -383.0
+margin_bottom = -211.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="CenterContainer" type="CenterContainer" parent="PopupPanel_IDinUse"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 4.0
+margin_top = 4.0
+margin_right = -4.0
+margin_bottom = -4.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+__meta__ = {
+"_edit_use_anchors_": true
+}
+
+[node name="VBoxContainer" type="VBoxContainer" parent="PopupPanel_IDinUse/CenterContainer"]
+margin_left = 31.0
+margin_top = 37.0
+margin_right = 218.0
+margin_bottom = 133.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="Label_IDinUse" type="Label" parent="PopupPanel_IDinUse/CenterContainer/VBoxContainer"]
+margin_right = 187.0
+margin_bottom = 48.0
+text = "This ID was already assigned.
+Did not save this entry.
+"
+align = 1
+
+[node name="Button_NextID" type="Button" parent="PopupPanel_IDinUse/CenterContainer/VBoxContainer"]
+margin_top = 52.0
+margin_right = 187.0
+margin_bottom = 72.0
+text = "Use the next free ID"
+
+[node name="Button_Cancel" type="Button" parent="PopupPanel_IDinUse/CenterContainer/VBoxContainer"]
+margin_top = 76.0
+margin_right = 187.0
+margin_bottom = 96.0
+text = "Cancel"
+
+[connection signal="pressed" from="VBoxContainer/TabContainer/Import/VSplitContainer/VBoxContainer_XMLPath/HBoxContainer/Button_Load" to="." method="_on_Import_Button_Load_pressed"]
+[connection signal="pressed" from="VBoxContainer/TabContainer/Import/VSplitContainer/VBoxContainer_Import/Button_Import" to="." method="_on_Button_Import_pressed"]
+[connection signal="item_selected" from="VBoxContainer/TabContainer/Tuning/HBoxContainer_Group/OptionButton_Group" to="." method="_on_OptionButton_Group_item_selected"]
+[connection signal="pressed" from="VBoxContainer/TabContainer/Tuning/HBoxContainer_Group/Button_New" to="." method="_on_Group_Button_New_pressed"]
+[connection signal="pressed" from="VBoxContainer/TabContainer/Tuning/HBoxContainer_Group/Button_Edit" to="." method="_on_Group_Button_Edit_pressed"]
+[connection signal="pressed" from="VBoxContainer/TabContainer/Tuning/HBoxContainer_GroupNamer/Button_Save" to="." method="_on_GroupNamer_Button_Save_pressed"]
+[connection signal="pressed" from="VBoxContainer/TabContainer/Tuning/HBoxContainer_GroupEditor/Button_Save" to="." method="_on_GroupEditor_Button_Save_pressed"]
+[connection signal="pressed" from="VBoxContainer/TabContainer/Tuning/HBoxContainer_GroupEditor/Button_Delete" to="." method="_on_GroupEditor_Button_Delete_pressed"]
+[connection signal="pressed" from="VBoxContainer/TabContainer/Tuning/HBoxContainer_Part/Button_Revert" to="." method="_on_Part_Button_Revert_pressed"]
+[connection signal="item_selected" from="VBoxContainer/TabContainer/Tuning/HBoxContainer_Part/OptionButton_Part" to="." method="_on_OptionButton_Part_item_selected"]
+[connection signal="pressed" from="VBoxContainer/TabContainer/Tuning/HBoxContainer_Part/Button_Save" to="." method="_on_Button_PartSave_pressed"]
+[connection signal="pressed" from="VBoxContainer/TabContainer/Tuning/HBoxContainer_Part/Button_Clear" to="." method="_on_Part_Button_Clear_pressed"]
+[connection signal="item_selected" from="VBoxContainer/TabContainer/Tuning/HBoxContainer_Type/OptionButton_Type" to="." method="_on_OptionButton_Type_item_selected"]
+[connection signal="pressed" from="VBoxContainer/TabContainer/Tuning/HBoxContainer_Price/HBoxContainer/Button_GetLast" to="." method="_on_Button_GetLastPrice_pressed"]
+[connection signal="pressed" from="VBoxContainer/TabContainer/Tuning/HBoxContainer_Rate/HBoxContainer/Button_GetLast" to="." method="_on_Button_GetLastRating_pressed"]
+[connection signal="item_selected" from="VBoxContainer/TabContainer/Conditionals/HBoxContainer_Group/OptionButton_Group" to="." method="_on_Conditionals_OptionButton_Group_item_selected"]
+[connection signal="pressed" from="VBoxContainer/TabContainer/Conditionals/HBoxContainer_Group/Button_New" to="." method="_on_Conditionals_Button_New_pressed"]
+[connection signal="pressed" from="VBoxContainer/TabContainer/Conditionals/HBoxContainer_Group/Button_Edit" to="." method="_on_Conditionals_Button_Edit_pressed"]
+[connection signal="pressed" from="VBoxContainer/TabContainer/Conditionals/HBoxContainer_GroupNamer/Button_Save" to="." method="_on_ConditionalsNamer_Button_Save_pressed"]
+[connection signal="pressed" from="VBoxContainer/TabContainer/Conditionals/HBoxContainer_GroupNamer/Button_Delete" to="." method="_on_Conditional_Button_Delete_pressed"]
+[connection signal="item_selected" from="VBoxContainer/TabContainer/Conditionals/HBoxContainer_Set/OptionButton_Set" to="." method="_on_Conditionals_OptionButton_Set_item_selected"]
+[connection signal="pressed" from="VBoxContainer/TabContainer/Conditionals/HBoxContainer_Set/Button_Save" to="." method="_on_Conditionals_Button_Save_pressed"]
+[connection signal="pressed" from="VBoxContainer/TabContainer/Conditionals/HBoxContainer_Set/Button_Clear" to="." method="_on_ConditionalSet_Button_Clear_pressed"]
+[connection signal="toggled" from="VBoxContainer/TabContainer/Conditionals/GridContainer_GroupsOfIDs/VBoxContainer_Group1/CheckBox_Group1" to="." method="_on_CheckBox_Group1_toggled"]
+[connection signal="item_selected" from="VBoxContainer/TabContainer/Conditionals/GridContainer_GroupsOfIDs/VBoxContainer_Group1/VSplitContainer_Group1/ItemList_Group1" to="." method="_on_PartsList_Group1_item_selected"]
+[connection signal="toggled" from="VBoxContainer/TabContainer/Conditionals/GridContainer_GroupsOfIDs/VBoxContainer_Group2/CheckBox_Group2" to="." method="_on_CheckBox_Group2_toggled"]
+[connection signal="item_selected" from="VBoxContainer/TabContainer/Conditionals/GridContainer_GroupsOfIDs/VBoxContainer_Group2/VSplitContainer_Group2/ItemList_Group2" to="." method="_on_ItemList_Group2_item_selected"]
+[connection signal="item_selected" from="VBoxContainer/TabContainer/Conditionals/GridContainer_GroupsOfIDs/VBoxContainer_Group3/VSplitContainer_Group3/ItemList_Group3" to="." method="_on_ItemList_Group3_item_selected"]
+[connection signal="item_selected" from="VBoxContainer/TabContainer/Conditionals/GridContainer_GroupsOfIDs/VBoxContainer_Group4/VSplitContainer_Group4/ItemList_Group4" to="." method="_on_ItemList_Group4_item_selected"]
+[connection signal="pressed" from="VBoxContainer/TabContainer/Conditionals/HBoxContainer_Objects/Button_Switch" to="." method="_on_Conditionals_Button_Switch_pressed"]
+[connection signal="pressed" from="PopupPanel_IDinUse/CenterContainer/VBoxContainer/Button_NextID" to="." method="_on_IDinUse_Button_NextID_pressed"]
+[connection signal="pressed" from="PopupPanel_IDinUse/CenterContainer/VBoxContainer/Button_Cancel" to="." method="_on_IDinUse_Button_Cancel_pressed"]
